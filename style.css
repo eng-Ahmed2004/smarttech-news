@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body { transition: background 0.5s, color 0.5s; color: #fff; }
+
+.header { position: sticky; top:0; z-index:1000; background: rgba(0,0,0,0.5); backdrop-filter: blur(8px); }
+.nav { display:flex; justify-content:space-between; align-items:center; padding:1rem 5%; }
+.logo { font-size:1.8rem; font-weight:700; color:#0ff; }
+.menu a { margin:0 1rem; text-decoration:none; color:#fff; font-weight:500; }
+#theme-toggle { background:#0ff;color:#000;border:none;padding:0.5rem 1rem;border-radius:6px;cursor:pointer; }
+
+.section { min-height:100vh; padding:4rem 1rem; display:flex; flex-direction:column; justify-content:center; }
+
+.hero { background: linear-gradient(-45deg,#4f46e5,#6366f1,#38bdf8,#06b6d4); background-size:400% 400%; animation: gradientBG 15s ease infinite; text-align:center; padding-top:6rem; }
+.news-section { background: linear-gradient(-45deg,#0ea5e9,#38bdf8,#60a5fa,#3b82f6); background-size:400% 400%; animation: gradientBG 20s ease infinite; }
+.reviews-section { background: linear-gradient(-45deg,#8b5cf6,#a78bfa,#c084fc,#e879f9); background-size:400% 400%; animation: gradientBG 25s ease infinite; }
+.comparison-section { background: linear-gradient(-45deg,#f97316,#fb923c,#f87171,#ef4444); background-size:400% 400%; animation: gradientBG 20s ease infinite; }
+.newsletter-section { background: linear-gradient(-45deg,#22c55e,#4ade80,#2dd4bf,#06b6d4); background-size:400% 400%; animation: gradientBG 15s ease infinite; }
+
+@keyframes gradientBG {0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+
+.card { background: rgba(255,255,255,0.15); border-radius:15px; padding:1rem; box-shadow:0 8px 32px rgba(0,0,0,0.2); backdrop-filter:blur(10px); transition: transform 0.3s, box-shadow 0.3s; }
+.card:hover { transform: translateY(-5px); box-shadow:0 12px 40px rgba(0,0,0,0.3); }
+.card img { width:100%; border-radius:10px; margin-bottom:1rem; }
+
+.comparison-table { width:100%; border-collapse:collapse; text-align:center; }
+.comparison-table th, .comparison-table td { border:1px solid #fff; padding:1rem; }
+.comparison-table th img { width:40px; display:block; margin:auto; margin-bottom:0.5rem; }
+
+.newsletter-form { display:flex; justify-content:center; gap:1rem; }
+.newsletter-form input { padding:0.75rem; border-radius:6px; border:1px solid #fff; flex:1; background: rgba(255,255,255,0.2); color:#fff;}
+.newsletter-form button { background:#0ff;color:#000;border:none;padding:0.75rem 1.5rem;border-radius:6px;cursor:pointer; }
+
+.footer { text-align:center; padding:2rem 0; background:rgba(0,0,0,0.7); }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:2rem; }
+.section-title { text-align:center; font-size:2rem; margin-bottom:2rem;}
