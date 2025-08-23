@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Responsive, modern phone comparison web app with filters, rankings, and two‑item compare."/>
+  <title>Phone Compare Pro</title>
+
+  <!-- Icons & Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4f1.png" sizes="any">
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <a class="brand" href="index.html"><i class="ri-smartphone-line"></i> Phone Compare <span>Pro</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#phoneList"><i class="ri-filter-2-line"></i> Browse</a>
+      <a href="#top"><i class="ri-trophy-line"></i> Top</a>
+      <a href="about.html"><i class="ri-information-line"></i> About</a>
+      <a href="contact.html"><i class="ri-customer-service-2-line"></i> Contact</a>
+    </nav>
+    <button class="icon-btn" id="toggleMode" aria-label="Toggle dark mode"><i class="ri-moon-line"></i></button>
+    <button class="icon-btn mobile-menu" id="menuBtn" aria-label="Toggle menu"><i class="ri-menu-3-line"></i></button>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero reveal" style="--d:.05s" role="banner">
+    <div class="hero-content reveal" style="--d:.1s">
+      <h1>Compare phones, pick the best.</h1>
+      <p>Filter by brand, price, battery, and rating, then compare two devices side‑by‑side. Save your favorites to revisit later.</p>
+      <div class="hero-actions">
+        <a href="#phoneList" class="btn-primary reveal" style="--d:.2s"><i class="ri-contrast-drop-2-line"></i> Start Comparing</a>
+        <button id="showFavorites" class="btn-secondary reveal" style="--d:.25s" type="button"><i class="ri-heart-2-line"></i> Favorites</button>
+      </div>
+    </div>
+    <div class="hero-image reveal" style="--d:.25s" aria-hidden="true">
+      <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1200&auto=format&fit=crop" alt="" loading="lazy">
+    </div>
+    <div class="hero-badges reveal" style="--d:.35s" aria-hidden="true">
+      <span><i class="ri-shield-check-line"></i> Trusted picks</span>
+      <span><i class="ri-flashlight-line"></i> Fast filters</span>
+      <span><i class="ri-device-line"></i> Fully responsive</span>
+    </div>
+  </section>
+
+  <!-- Filters -->
+  <section class="filters reveal" style="--d:.1s" aria-label="Filters">
+    <input type="text" id="searchInput" placeholder="Search phones…" inputmode="search" aria-label="Search phones"/>
+    <select id="brandFilter" aria-label="Filter by brand">
+      <option value="all">All Brands</option>
+    </select>
+    <select id="priceFilter" aria-label="Filter by price">
+      <option value="all">All Prices</option>
+      <option value="low">Under $800</option>
+      <option value="mid">$800 - $1200</option>
+      <option value="high">Above $1200</option>
+    </select>
+    <select id="sortFilter" aria-label="Sort phones">
+      <option value="default">Sort By</option>
+      <option value="priceLow">Price: Low → High</option>
+      <option value="priceHigh">Price: High → Low</option>
+      <option value="battery">Battery</option>
+      <option value="rating">Rating</option>
+    </select>
+  </section>
+
+  <!-- Phone Grid -->
+  <main class="container">
+    <div class="tags-row" id="activeView"><i class="ri-apps-2-line"></i> Showing: <strong>All phones</strong></div>
+    <section class="phone-list reveal" id="phoneList" style="--d:.15s" aria-live="polite"></section>
+  </main>
+
+  <!-- Compare -->
+  <section class="compare-section reveal" id="compareSection" style="--d:.15s" aria-labelledby="compareTitle">
+    <h2 id="compareTitle"><i class="ri-git-compare-line"></i> Comparison Result</h2>
+    <div id="compareTable" class="compare-grid"></div>
+    <button id="resetCompare" class="btn-primary"><i class="ri-restart-line"></i> Reset Comparison</button>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials reveal" style="--d:.15s" aria-label="What people say">
+    <h2><i class="ri-chat-3-line"></i> What people say</h2>
+    <div class="testi-grid">
+      <article class="testi">
+        <p>“Clean design, lightning‑fast filtering, and the compare view is perfect for quick decisions.”</p>
+        <footer>— Lina H.</footer>
+      </article>
+      <article class="testi">
+        <p>“I love the favorites feature. I shortlisted phones and came back later on my laptop.”</p>
+        <footer>— Kareem M.</footer>
+      </article>
+      <article class="testi">
+        <p>“Finally a simple tool that looks modern on mobile, tablet, and desktop.”</p>
+        <footer>— Sara A.</footer>
+      </article>
+    </div>
+  </section>
+
+  <!-- Ranking -->
+  <section class="ranking reveal" id="top" style="--d:.15s">
+    <h2><i class="ri-trophy-line"></i> Top Rated Phones</h2>
+    <div class="ranking-list" id="rankingList"></div>
+  </section>
+
+  <!-- Toast -->
+  <div id="toast" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 Phone Compare Pro. All rights reserved.</p>
+      <ul class="footer-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

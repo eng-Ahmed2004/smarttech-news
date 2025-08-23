@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Phone Compare Pro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="index.html"><i class="ri-smartphone-line"></i> Phone Compare <span>Pro</span></a>
+    <nav class="nav-links">
+      <a href="index.html#phoneList">Browse</a>
+      <a href="index.html#top">Top</a>
+      <a href="about.html">About</a>
+    </nav>
+    <a class="icon-btn" href="index.html"><i class="ri-arrow-go-back-line"></i></a>
+  </header>
+
+  <main class="container" style="padding:2rem 1rem">
+    <h1>Contact</h1>
+    <p>Have suggestions? Send feedback and feature requests.</p>
+    <form class="contact-form" onsubmit="event.preventDefault(); alert('Thanks! Your message has been noted.');">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.7rem;max-width:720px">
+        <input required placeholder="Your name" aria-label="Your name">
+        <input required type="email" placeholder="Email" aria-label="Your email">
+        <textarea required placeholder="Message" aria-label="Your message" style="grid-column:1/-1;height:140px;padding:.75rem;border-radius:12px;border:1px solid #e5e7eb"></textarea>
+      </div>
+      <button class="btn-primary" style="margin-top:.8rem" type="submit"><i class="ri-send-plane-2-line"></i> Send</button>
+    </form>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 Phone Compare Pro. All rights reserved.</p>
+      <ul class="footer-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
